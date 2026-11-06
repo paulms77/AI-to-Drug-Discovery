@@ -100,6 +100,18 @@ Optuna search, and submission assembly.
 A GPU helps the GNN and TabNet paths but is not required for the
 gradient-boosting models.
 
+## Results
+
+Top 7% on the leaderboard.
+
+![Predicted against true IC50 across the test compounds](docs/ic50-pred-vs-true.png)
+
+*True IC50 (red) against predicted (green). The model follows the baseline well
+but systematically under-predicts the tall spikes — the weakly-active compounds
+with very high IC50. That is the expected consequence of training in pIC50
+space, which compresses exactly that end of the range; it is a reasonable
+trade, since potency at the low end is what matters.*
+
 ## Notes
 
 **Chemical validity is not optional.** Descriptors silently return `None` for
